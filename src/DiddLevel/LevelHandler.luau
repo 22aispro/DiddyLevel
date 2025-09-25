@@ -7,7 +7,7 @@ export type PlayerLevelObject = {
 	Linked: Player;
 	Current: Level;
 	CurrentXP: number;
-	NextLevel: Level;
+	NextLevel: Level?;
 }
 
 local level_handler = {
