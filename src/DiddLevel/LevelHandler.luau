@@ -16,11 +16,12 @@ local level_handler = {
 }
 
 function level_handler.OnPlayerAdded(plr, data: PlayerLevelObject)
+	local next_level = level_handler.all_levels[data.Current.LevelRank+1] or level_handler.all_levels[2]
 	data = data or {
 		Linked = plr;
 		Current = level_handler.all_levels[1];
 		CurrentXP = 0;
-		NextLevel = level_handler.all_levels[2];
+		NextLevel = next_level;
 	}
 	if level_handler.plrs[data.Linked.Name] then
 		warn(`Player ({data.Linked.Name}) already exists in the level handler`)
