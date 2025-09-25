@@ -77,7 +77,7 @@ function level_handler.AwardXP(plr: Player, XP: number)
 	local current_xp = plr_data.CurrentXP
 	print(current_xp)
 	
-	while plr_data.NextLevel and current_xp >= plr_data.NextLevel.RequiredXP then
+	while plr_data.NextLevel and current_xp >= plr_data.NextLevel.RequiredXP do
 		level_handler.LevelUp(plr)
 	end
 end
