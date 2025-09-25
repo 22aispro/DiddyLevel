@@ -67,17 +67,13 @@ end
 
 function level_handler.AwardXP(plr: Player, XP: number)
 	local plr_data = level_handler.plrs[plr.Name]
-	if not plr_data.NextLevel then
-		warn(`Next level doesnt exist; XP not awarded`)
-		return
-	end
 	
 	plr_data.CurrentXP = plr_data.CurrentXP + XP
 	
 	local current_xp = plr_data.CurrentXP
 	print(current_xp)
 	
-	while current_xp >= plr_data.NextLevel.RequiredXP do
+	while plr_data.NextLevel and current_xp >= plr_data.NextLevel.RequiredXP do
 		level_handler.LevelUp(plr)
 	end
 end
