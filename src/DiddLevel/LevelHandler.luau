@@ -58,9 +58,6 @@ function level_handler.LevelUp(plr)
 	if not level_handler.all_levels[new_level.LevelRank] then
 		warn(`Level {new_level} does not exist`)
 		return
-	elseif level_handler.all_levels[next_level] then
-		warn(`Level {next_level} does not exist`)
-		return
 	end
 	
 	plr_data.Current = new_level
@@ -78,7 +75,10 @@ function level_handler.AwardXP(plr: Player, XP: number)
 	print(current_xp)
 	
 	while plr_data.NextLevel and current_xp >= plr_data.NextLevel.RequiredXP do
+		if not plr_data.NextLevel then break end
 		level_handler.LevelUp(plr)
+		
+		task.wait()
 	end
 end
 
