@@ -1,21 +1,13 @@
 # DiddyLevel
+**Dynamic Leveling Module for Roblox**
 
-## Dynamic Leveling Module
+DiddyLevel is a lightweight, easy-to-use module for handling player XP and leveling in Roblox games. Track progression, award XP, and manage levels with minimal setup.
 
-DiddyLevel is a high-performance, no-nonsense leveling system for Roblox. Designed for speed, simplicity, and reliability, this module handles XP awarding and player progression seamlessly.
+## Setup
+1. Place `DiddyLevel` in `ServerStorage`.
+2. Include `LevelMethods` and `LevelHandler` inside the `DiddyLevel` module.
 
-### Setup:
-
-- Place the DiddyLevel module in ServerStorage.
-
- - Include LevelMethods and LevelHandler inside the DiddyLevel module.
-
-### Features:
-
-- Streamlined XP management
-
-- Flexible leveling mechanics
-
-- Minimal setup, maximum impact
-
-## Power up your game with DiddyLevel — leveling made effortless.
+## Features
+- Simple XP awarding
+- Flexible leveling system
+- Works out of the box
