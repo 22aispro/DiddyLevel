@@ -2,23 +2,23 @@
 **Dynamic Leveling Module for Roblox**
 
 ## Why us?
-    - We offer an easy to use leveling system so you don't have to make one from scratch.
-    - Handles XP and player progression automatically.
-    - Flexible enough to add your own custom leveling methods.
+    -We offer an easy to use leveling system so you don't have to make one from scratch.
+    -Handles XP and player progression automatically.
+    -Flexible enough to add your own custom leveling methods.
 
 ## Setup
-    - Place `DiddyLevel` in `ServerStorage`
-    - Include `LevelMethods` and `LevelHandler` inside `DiddyLevel`
+    -Place `DiddyLevel` in `ServerStorage`
+    -Include `LevelMethods` and `LevelHandler` inside `DiddyLevel`
 
 ## Features
-    - Track and award XP
-    - Flexible leveling system
-    - Works out of the box
+    -Track and award XP
+    -Flexible leveling system
+    -Works out of the box
 
 ## Usage Examples
 
 ### Initialize Levels
-    - Simply make a table of the levels you want and their required XP, and use DiddyLevel.InitializeLevels(Tbl) as shown below.
+    -Simply make a table of the levels you want and their required XP, and use DiddyLevel.InitializeLevels(Tbl) as shown below.
 ```luau
 local levels = {
     {Level = 1, XPRequired = 0},
@@ -29,7 +29,7 @@ local levels = {
 DiddyLevel.InitializeLevels(levels)
 ```
 ### Intialize Player
-    - To do this simply make a players.PlayerAdded connection
+    -To do this simply make a players.PlayerAdded connection
 ```luau
 game.Players.PlayerAdded:Connect(function(player)
     local playerData = {Level = 1, XP = 0} -- PlayerLevelObject
@@ -37,8 +37,8 @@ game.Players.PlayerAdded:Connect(function(player)
 end)
 ```
 ### Create custom leveling methods
-    - These are simply methods the player can use to gain XP
-    - You can do this by calling DiddyLevel.CreateLevelMethod(MethodInfo) MethodInfo is a table
+    -These are simply methods the player can use to gain XP
+    -You can do this by calling DiddyLevel.CreateLevelMethod(MethodInfo) MethodInfo is a table
 ```luau
 local customMethod = {
     Name = "KillXP",
@@ -50,8 +50,8 @@ local customMethod = {
 DiddyLevel.CreateLevelMethod(customMethod)
 ```
 ### Apply all methods to a player
-    - This will allow the player to be able to execute level methods.
-    - This is the same player.PlayerAdded connection as in InitializePlayer
+    -This will allow the player to be able to execute level methods.
+    -This is the same player.PlayerAdded connection as in InitializePlayer
 ```lua
 game.Players.PlayerAdded:Connect(function(player)
     -- player initializer code
@@ -61,8 +61,8 @@ game.Players.PlayerAdded:Connect(function(player)
 end)
 ```
 ### Award XP directly
-    - This can be done if you want to possible make a command to award XP
-    - The first argument will be the player that gets the XP, the second will be how much XP is awarded.
+    -This can be done if you want to possible make a command to award XP
+    -The first argument will be the player that gets the XP, the second will be how much XP is awarded.
 ```lua
 DiddyLevel.AwardXP(player, 5)
 ```
