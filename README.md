@@ -43,7 +43,7 @@ end)
 - You can do this by calling DiddyLevel.CreateLevelMethod(MethodInfo) MethodInfo is a table
 ```luau
 local customMethod = {
-   Key = "TestMethod";
+   key = "TestMethod";
     Callback = function(player, char, ...)
         DiddyLevel.AwardXP(player, amount (e.g. 5))
     end
