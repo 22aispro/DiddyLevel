@@ -1,7 +1,7 @@
 # DiddyLevel
 **Dynamic Leveling Module for Roblox**
 
-- https://create.roblox.com/store/asset/113114808843140/SRC
+- [DiddyLevel Roblox Model](https://create.roblox.com/store/asset/113114808843140/SRC)
 
 ## Why us?
 - We offer an easy to use leveling system so you don't have to make one from scratch.
