@@ -51,9 +51,9 @@ local customMethod = {
 
 DiddyLevel.CreateLevelMethod(customMethod)
 ```
-### Apply all methods to a player
-- This will allow the player to be able to execute level methods.
-- This is the same player.PlayerAdded connection as in InitializePlayer
+### Force a method to fire
+- This will force a method to fire for a player; Please dont allow clients to exploit this.
+- This is the same player.PlayerAdded connection as in InitializePlayer (optional)
 ```lua
 game.Players.PlayerAdded:Connect(function(player)
     -- player initializer code
