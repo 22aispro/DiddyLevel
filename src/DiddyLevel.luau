@@ -27,4 +27,8 @@ function diddy_level.AwardXP(plr, xp)
 	level_handler.AwardXP(plr, xp)
 end
 
+function diddy_level.ForceCallback(plr, char, extra_args)
+	level_methods.ForceCallback(plr, char, extra_args)
+end
+
 return diddy_level
