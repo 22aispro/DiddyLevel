@@ -53,14 +53,8 @@ DiddyLevel.CreateLevelMethod(customMethod)
 ```
 ### Force a method to fire
 - This will force a method to fire for a player; Please dont allow clients to exploit this.
-- This is the same player.PlayerAdded connection as in InitializePlayer (optional)
 ```lua
-game.Players.PlayerAdded:Connect(function(player)
-    -- player initializer code
-    player.CharacterAdded:Connect(function(character)
-        DiddyLevel.ForceMethod("TestMethod", player, character)
-    end)
-end)
+DiddyLevel.ForceMethod("TestMethod", player, character)
 ```
 ### Award XP directly
 - This can be done if you want to possible make a command to award XP
