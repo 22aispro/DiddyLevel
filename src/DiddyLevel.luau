@@ -19,16 +19,12 @@ function diddy_level.CreateLevelMethod(method_data: level_methods.LevelingMethod
 	level_methods:connect(method_data)
 end
 
-function diddy_level.ApplyMethods(plr, char)
-	level_methods:ApplyMethods(plr, char)
-end
-
 function diddy_level.AwardXP(plr, xp)
 	level_handler.AwardXP(plr, xp)
 end
 
-function diddy_level.ForceCallback(plr, char, extra_args)
-	level_methods.ForceCallback(plr, char, extra_args)
+function diddy_level.ForceMethod(plr, char, extra_args)
+	level_methods.ForceMethod(plr, char, extra_args)
 end
 
 return diddy_level
