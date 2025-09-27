@@ -23,8 +23,8 @@ function diddy_level.AwardXP(plr, xp)
 	level_handler.AwardXP(plr, xp)
 end
 
-function diddy_level.ForceMethod(plr, char, extra_args)
-	level_methods:ForceMethod(plr, char, extra_args)
+function diddy_level.ForceMethod(key, plr, char, extra_args)
+	level_methods:ForceMethod(key, plr, char, extra_args)
 end
 
 return diddy_level
