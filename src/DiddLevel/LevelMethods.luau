@@ -10,13 +10,13 @@ level_methods.methods = {}
 function level_methods:connect(data: LevelingMethod)
 	level_methods.methods[data.key] = {
 		key = data.key;
-		xp = data.xp;
 		callback = data.callback;
 	}
 end
 
-function level_methods:ForceMethod(player: Player, char: Model, method: LevelingMethod, extra_args: any)
-	if method.callback then
+function level_methods:ForceMethod(key: string, player: Player, char: Model, extra_args: any)
+	local method = level_methods.methods[key]
+	if method then
 		method.callback(player, char, extra_args)
 	end
 end
