@@ -15,7 +15,13 @@ function level_methods:connect(data: LevelingMethod)
 	}
 end
 
-function level_methods:ApplyMethods(player, char)
+function level_methods:ForceCallback(player: Player, char: Model, method: LevelingMethod, extra_args: any)
+	if method.callback then
+		method.callback(player, char, extra_args)
+	end
+end
+
+function level_methods:ApplyMethods(player: Player, char: Model)
 	while char do
 		for _, method in level_methods.methods do
 			if method.callback then
