@@ -44,8 +44,8 @@ end)
 ```luau
 local customMethod = {
     Name = "KillXP",
-    Callback = function(player, char)
-        DiddyLevel.AwardXP(player, amount (e.g. 5)
+    Callback = function(player, char, ...)
+        DiddyLevel.AwardXP(player, amount (e.g. 5))
     end
 }
 
