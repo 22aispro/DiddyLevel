@@ -1,7 +1,7 @@
 local replicated_storage = game:GetService("ReplicatedStorage")
 
-local level_methods = require(script:WaitForChild('LevelMethods'))
-local level_handler = require(script:WaitForChild('LevelHandler'))
+local level_methods = require("@self/LevelMethods")
+local level_handler = require("@self/LevelHandler")
 
 local diddy_level = {}
 
