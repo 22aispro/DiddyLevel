@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DiddyLevel — API Reference</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="modern-docs">
+
+<main class="doc-container">
+
+  <h1>DiddyLevel — API Reference</h1>
+  <p class="lead">
+    Complete reference for all DiddyLevel functions.
+  </p>
+
+  <section>
+    <h2>InitializeLevels(levelList)</h2>
+    <p>Registers all levels for your game.</p>
+    <pre><code class="lua">
+DiddyLevel.InitializeLevels({
+  { LevelRank = 1, RequiredXP = 0 },
+  { LevelRank = 2, RequiredXP = 100 },
+})
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>InitializePlayer(player, data?)</h2>
+    <p>Registers a player with optional starting data.</p>
+    <pre><code class="lua">
+DiddyLevel.InitializePlayer(player, optionalData)
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>AwardXP(player, xp)</h2>
+    <p>Awards XP and handles automatic level-ups.</p>
+    <pre><code class="lua">
+DiddyLevel.AwardXP(player, 25)
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>CreateLevelMethod(methodData)</h2>
+    <p>Creates a custom leveling method with a key and callback.</p>
+    <pre><code class="lua">
+DiddyLevel.CreateLevelMethod({
+  key = "KillEnemy",
+  callback = function(player, char)
+    DiddyLevel.AwardXP(player, 10)
+  end
+})
+    </code></pre>
+  </section>
+
+  <section>
+    <h2>ForceMethod(key, player, char, extraArgs)</h2>
+    <p>Manually executes a registered method by its key.</p>
+    <pre><code class="lua">
+DiddyLevel.ForceMethod("KillEnemy", player, character, enemy)
+    </code></pre>
+  </section>
+
+  <div class="button-group">
+    <a href="getting-started.html" class="btn">Back to Getting Started</a>
+  </div>
+
+</main>
+
+</body>
+</html>
