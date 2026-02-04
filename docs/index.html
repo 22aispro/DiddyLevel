@@ -2,32 +2,76 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>DiddyLevel</title>
+  <title>DiddyLevel Documentation</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="landing">
-  <div class="hero">
-    <span class="badge">Roblox • Server-side</span>
+<body class="docs">
+  <aside class="sidebar">
+    <h2>DiddyLevel</h2>
+    <nav>
+      <a href="docs.html#overview">Overview</a>
+      <a href="docs.html#installation">Installation</a>
+      <a href="docs.html#concepts">Core Concepts</a>
+      <a href="docs.html#levels">Levels</a>
+      <a href="docs.html#players">Players</a>
+      <a href="docs.html#xp">Awarding XP</a>
+      <a href="docs.html#methods">Leveling Methods</a>
+      <a href="docs.html#example">Example</a>
+    </nav>
+  </aside>
 
-    <h1>DiddyLevel</h1>
-    <p class="subtitle">
-      A modern XP & leveling framework for Roblox games.
-    </p>
+  <main class="content">
+    <section>
+      <h1>DiddyLevel</h1>
+      <p>
+        DiddyLevel is a server-side XP and leveling framework for Roblox.
+        It provides a simple API for defining levels, tracking player progress,
+        and awarding XP through customizable methods.
+      </p>
+    </section>
 
-    <div class="actions">
-      <a href="docs.html" class="btn primary">Read the Docs</a>
-      <a href="https://github.com/22aispro/DiddyLevel" class="btn">GitHub</a>
-    </div>
+    <section>
+      <h2>Getting Started</h2>
+      <ol>
+        <li>Define your levels</li>
+        <li>Initialize players on join</li>
+        <li>Award XP through gameplay</li>
+      </ol>
 
-    <pre class="hero-code"><code class="lua">
+      <pre><code class="lua">
+local DiddyLevel = require(game.ServerStorage.DiddyLevel)
+
 DiddyLevel.InitializeLevels({
   { LevelRank = 1, RequiredXP = 0 },
   { LevelRank = 2, RequiredXP = 100 },
 })
+      </code></pre>
 
-DiddyLevel.AwardXP(player, 50)
-    </code></pre>
-  </div>
+      <a href="docs.html" class="btn primary">Go to Full Documentation</a>
+    </section>
+
+    <section>
+      <h2>API Surface</h2>
+      <ul>
+        <li><code>InitializeLevels(levels)</code></li>
+        <li><code>InitializePlayer(player, data?)</code></li>
+        <li><code>AwardXP(player, xp)</code></li>
+        <li><code>CreateLevelMethod(method)</code></li>
+        <li><code>ForceMethod(key, player, character, args)</code></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Links</h2>
+      <ul>
+        <li>
+          <a href="https://github.com/22aispro/DiddyLevel">
+            GitHub Repository
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
 </body>
 </html>
