@@ -3,6 +3,11 @@
 
 - [DiddyLevel Roblox Model](https://create.roblox.com/store/asset/113114808843140/SRC)
 
+- ## Documentation
+- [Installation](installation.md)
+- [Usage](usage.md)
+- [API](api.md)
+
 ## Why us?
 - We offer an easy to use leveling system so you don't have to make one from scratch.
 - Handles XP and player progression automatically.
