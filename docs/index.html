@@ -1,75 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>DiddyLevel Docs</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <title>DiddyLevel — Docs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="studio-docs">
-  <div class="app">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="sidebar-header">DiddyLevel</div>
+<body class="docs-site">
 
-      <nav class="nav">
-        <a class="active" href="#overview">Overview</a>
-        <a href="#installation">Installation</a>
-        <a href="#levels">Levels</a>
-        <a href="#players">Players</a>
-        <a href="#xp">Awarding XP</a>
-        <a href="#methods">Leveling Methods</a>
-        <a href="#api">API Reference</a>
-        <a href="#example">Example</a>
+  <!-- Top Navbar -->
+  <header class="top-nav">
+    <div class="container">
+      <a href="index.html" class="logo">DiddyLevel</a>
+
+      <nav class="main-nav">
+        <a href="getting-started.html">Getting Started</a>
+        <a href="guides.html">Guides</a>
+        <a href="reference.html">Reference</a>
       </nav>
-    </aside>
 
-    <!-- Main Content -->
-    <main class="content">
-      <section id="overview">
-        <h1>DiddyLevel</h1>
-        <p class="lead">
-          A server-side XP and leveling framework for Roblox.
-          Built to be simple, extensible, and Studio-friendly.
-        </p>
-      </section>
+      <div class="nav-right">
+        <input type="search" placeholder="Search docs…">
+        <select id="version-select">
+          <option value="v1.0">v1.0</option>
+        </select>
+      </div>
+    </div>
+  </header>
 
-      <section id="installation">
-        <h2>Installation</h2>
-        <pre><code class="lua">
-local DiddyLevel = require(game.ServerStorage.DiddyLevel)
-        </code></pre>
-      </section>
+  <!-- Hero / Landing Content -->
+  <main class="landing-content container">
+    <h1>DiddyLevel</h1>
+    <p class="lead">
+      A flexible XP and leveling framework for Roblox games.
+      Simple API, Roblox Studio friendly.
+    </p>
 
-      <section id="levels">
-        <h2>Defining Levels</h2>
-        <pre><code class="lua">
+    <div class="cta-group">
+      <a href="getting-started.html" class="btn primary">Get Started</a>
+      <a href="reference.html" class="btn">API Reference</a>
+    </div>
+
+    <pre><code class="lua">
 DiddyLevel.InitializeLevels({
   { LevelRank = 1, RequiredXP = 0 },
   { LevelRank = 2, RequiredXP = 100 },
 })
-        </code></pre>
-      </section>
+    </code></pre>
+  </main>
 
-      <section id="xp">
-        <h2>Awarding XP</h2>
-        <pre><code class="lua">
-DiddyLevel.AwardXP(player, 25)
-        </code></pre>
-      </section>
-
-      <section id="methods">
-        <h2>Leveling Methods</h2>
-        <pre><code class="lua">
-DiddyLevel.CreateLevelMethod({
-  key = "Kill",
-  callback = function(player, character)
-    DiddyLevel.AwardXP(player, 10)
-  end
-})
-        </code></pre>
-      </section>
-    </main>
-  </div>
 </body>
 </html>
