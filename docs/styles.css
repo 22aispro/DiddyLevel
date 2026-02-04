@@ -1,7 +1,8 @@
-/* Modern Dark Docs Theme */
+/* ---------------- Modern Dark Docs Theme ---------------- */
+
 body.modern-docs {
-  background: #12131a;
-  color: #e0e6ed;
+  background-color: #12131a; /* Dark background */
+  color: #e0e6ed;           /* Light text */
   font-family: "Inter", sans-serif;
   line-height: 1.7;
   margin: 0;
@@ -9,8 +10,8 @@ body.modern-docs {
 }
 
 .doc-container {
-  max-width: 780px;
-  margin: 4rem auto;
+  max-width: 780px;         /* readable width */
+  margin: 4rem auto;        /* horizontal centering */
   padding: 0 1.5rem;
 }
 
@@ -34,12 +35,14 @@ h2 {
   margin-bottom: 2rem;
 }
 
+/* ---------------- Code blocks ---------------- */
 pre {
-  background: #1c1f28;
+  background: #1c1f28;      /* Dark code background */
   padding: 1rem 1.25rem;
   border-radius: 10px;
-  overflow-x: auto;
-  margin-top: 1rem;
+  margin: 1rem auto;         /* centered */
+  max-width: 90%;            /* not full width */
+  overflow-x: auto;          /* horizontal scroll if needed */
   font-family: "JetBrains Mono", monospace;
   font-size: 0.95rem;
 }
@@ -48,6 +51,7 @@ code {
   color: #d1d5db;
 }
 
+/* ---------------- Buttons ---------------- */
 a.btn {
   text-decoration: none;
   display: inline-block;
