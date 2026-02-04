@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DiddyLevel Docs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="docs">
+  <aside class="sidebar">
+    <h2>DiddyLevel</h2>
+    <nav>
+      <a href="#intro">Introduction</a>
+      <a href="#install">Installation</a>
+      <a href="#usage">Usage</a>
+      <a href="#api">API</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <section id="intro">
+      <h1>Introduction</h1>
+      <p>
+        DiddyLevel is a flexible XP and leveling framework designed
+        for Roblox server-side systems.
+      </p>
+    </section>
+
+    <section id="install">
+      <h1>Installation</h1>
+      <ol>
+        <li>Download the repository</li>
+        <li>Place <code>DiddyLevel</code> in <code>ServerStorage</code></li>
+        <li>Require it in your server scripts</li>
+      </ol>
+    </section>
+
+    <section id="usage">
+      <h1>Basic Usage</h1>
+
+      <pre><code class="lua">
+local DiddyLevel = require(path.to.DiddyLevel)
+
+DiddyLevel.InitializePlayer(player)
+DiddyLevel.AddXP(player, 100)
+      </code></pre>
+    </section>
+
+    <section id="api">
+      <h1>API</h1>
+
+      <h3>InitializePlayer(player)</h3>
+      <p>Registers a new player with default XP and level.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
