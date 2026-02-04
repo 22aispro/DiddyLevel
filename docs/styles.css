@@ -1,3 +1,12 @@
+:root {
+  --bg: #0b1120;
+  --panel: #020617;
+  --border: #1e293b;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -5,50 +14,110 @@
 body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #0f172a;
-  color: #e5e7eb;
+  background: var(--bg);
+  color: var(--text);
 }
 
-header {
-  padding: 2rem;
-  background: #020617;
+/* ---------- Landing ---------- */
+
+.landing {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
 }
 
-h1, h2 {
+.hero {
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 1.2rem;
+}
+
+.actions {
+  margin-top: 2rem;
+}
+
+.btn {
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  margin: 0 0.5rem;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: #020617;
+  border: none;
+}
+
+/* ---------- Docs Layout ---------- */
+
+.docs {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 260px;
+  background: var(--panel);
+  padding: 1.5rem;
+  border-right: 1px solid var(--border);
+}
+
+.sidebar h2 {
   margin-top: 0;
 }
 
-a {
-  color: #38bdf8;
+.sidebar a {
+  display: block;
+  margin: 0.75rem 0;
+  color: var(--muted);
   text-decoration: none;
 }
 
-main {
-  padding: 2rem;
-  max-width: 900px;
-  margin: auto;
+.sidebar a:hover {
+  color: var(--accent);
 }
 
-.card {
-  background: #020617;
-  padding: 1.5rem;
-  border-radius: 12px;
-  margin-bottom: 1.5rem;
+.content {
+  padding: 3rem;
+  max-width: 900px;
 }
+
+section {
+  margin-bottom: 4rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+p, li {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ---------- Code Blocks ---------- */
 
 pre {
   background: #020617;
-  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
   overflow-x: auto;
-  border-radius: 8px;
 }
 
 code {
   color: #a5f3fc;
-}
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  opacity: 0.6;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
