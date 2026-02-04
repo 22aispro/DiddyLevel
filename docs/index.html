@@ -8,13 +8,26 @@
 </head>
 <body class="landing">
   <div class="hero">
+    <span class="badge">Roblox • Server-side</span>
+
     <h1>DiddyLevel</h1>
-    <p>Modern leveling system for Roblox games.</p>
+    <p class="subtitle">
+      A modern XP & leveling framework for Roblox games.
+    </p>
 
     <div class="actions">
-      <a class="btn primary" href="docs.html">Read the Docs</a>
-      <a class="btn" href="https://github.com/22aispro/DiddyLevel">GitHub</a>
+      <a href="docs.html" class="btn primary">Read the Docs</a>
+      <a href="https://github.com/22aispro/DiddyLevel" class="btn">GitHub</a>
     </div>
+
+    <pre class="hero-code"><code class="lua">
+DiddyLevel.InitializeLevels({
+  { LevelRank = 1, RequiredXP = 0 },
+  { LevelRank = 2, RequiredXP = 100 },
+})
+
+DiddyLevel.AwardXP(player, 50)
+    </code></pre>
   </div>
 </body>
 </html>
