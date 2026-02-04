@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>DiddyLevel Docs</title>
+  <title>DiddyLevel Documentation</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -10,47 +10,184 @@
   <aside class="sidebar">
     <h2>DiddyLevel</h2>
     <nav>
-      <a href="#intro">Introduction</a>
-      <a href="#install">Installation</a>
-      <a href="#usage">Usage</a>
-      <a href="#api">API</a>
+      <a href="#overview">Overview</a>
+      <a href="#installation">Installation</a>
+      <a href="#concepts">Core Concepts</a>
+      <a href="#levels">Levels</a>
+      <a href="#players">Players</a>
+      <a href="#xp">Awarding XP</a>
+      <a href="#methods">Leveling Methods</a>
+      <a href="#example">Example Setup</a>
     </nav>
   </aside>
 
   <main class="content">
-    <section id="intro">
-      <h1>Introduction</h1>
+    <!-- Overview -->
+    <section id="overview">
+      <h1>DiddyLevel</h1>
       <p>
-        DiddyLevel is a flexible XP and leveling framework designed
-        for Roblox server-side systems.
+        <strong>DiddyLevel</strong> is a server-side leveling framework for Roblox
+        that handles XP, player progression, and customizable leveling logic.
+      </p>
+
+      <p>
+        It is designed to be simple, flexible, and extensible for any game type.
       </p>
     </section>
 
-    <section id="install">
+    <!-- Installation -->
+    <section id="installation">
       <h1>Installation</h1>
       <ol>
-        <li>Download the repository</li>
-        <li>Place <code>DiddyLevel</code> in <code>ServerStorage</code></li>
-        <li>Require it in your server scripts</li>
+        <li>Place the <code>DiddyLevel</code> folder in <code>ServerStorage</code></li>
+        <li>Require the module from a server script</li>
       </ol>
-    </section>
-
-    <section id="usage">
-      <h1>Basic Usage</h1>
 
       <pre><code class="lua">
-local DiddyLevel = require(path.to.DiddyLevel)
-
-DiddyLevel.InitializePlayer(player)
-DiddyLevel.AddXP(player, 100)
+local DiddyLevel = require(game.ServerStorage.DiddyLevel)
       </code></pre>
     </section>
 
-    <section id="api">
-      <h1>API</h1>
+    <!-- Core Concepts -->
+    <section id="concepts">
+      <h1>Core Concepts</h1>
+      <p>DiddyLevel is built from three main modules:</p>
+      <ul>
+        <li><strong>DiddyLevel</strong> – public API</li>
+        <li><strong>LevelHandler</strong> – level & player state</li>
+        <li><strong>LevelMethods</strong> – custom XP triggers</li>
+      </ul>
+    </section>
 
-      <h3>InitializePlayer(player)</h3>
-      <p>Registers a new player with default XP and level.</p>
+    <!-- Levels -->
+    <section id="levels">
+      <h1>Levels</h1>
+
+      <p>A level is defined using the following structure:</p>
+
+      <pre><code class="lua">
+export type Level = {
+  LevelRank: number,
+  RequiredXP: number,
+}
+      </code></pre>
+
+      <p>
+        Levels are registered using <code>InitializeLevels</code>.
+      </p>
+
+      <pre><code class="lua">
+DiddyLevel.InitializeLevels({
+  { LevelRank = 1, RequiredXP = 0 },
+  { LevelRank = 2, RequiredXP = 100 },
+  { LevelRank = 3, RequiredXP = 250 },
+})
+      </code></pre>
+
+      <p>
+        Levels are indexed internally by <code>LevelRank</code>. Duplicate
+        ranks or XP values are ignored.
+      </p>
+    </section>
+
+    <!-- Players -->
+    <section id="players">
+      <h1>Players</h1>
+
+      <p>
+        Each player is tracked using a <strong>PlayerLevelObject</strong>.
+      </p>
+
+      <pre><code class="lua">
+export type PlayerLevelObject = {
+  Linked: Player,
+  Current: Level,
+  CurrentXP: number,
+  NextLevel: Level?,
+}
+      </code></pre>
+
+      <p>Players are initialized when they join:</p>
+
+      <pre><code class="lua">
+DiddyLevel.InitializePlayer(player)
+      </code></pre>
+
+      <p>
+        If no data is provided, the player starts at level 1 automatically.
+      </p>
+    </section>
+
+    <!-- Awarding XP -->
+    <section id="xp">
+      <h1>Awarding XP</h1>
+
+      <p>
+        XP is awarded using <code>AwardXP</code>. Level-ups are handled automatically.
+      </p>
+
+      <pre><code class="lua">
+DiddyLevel.AwardXP(player, 50)
+      </code></pre>
+
+      <p>
+        If enough XP is earned, the player may level up multiple times in a
+        single award.
+      </p>
+    </section>
+
+    <!-- Leveling Methods -->
+    <section id="methods">
+      <h1>Leveling Methods</h1>
+
+      <p>
+        Leveling methods allow you to define custom XP logic such as kills,
+        quests, or actions.
+      </p>
+
+      <pre><code class="lua">
+export type LevelingMethod = {
+  key: string,
+  xp: number,
+  callback: () -> any,
+}
+      </code></pre>
+
+      <h3>Creating a Method</h3>
+
+      <pre><code class="lua">
+DiddyLevel.CreateLevelMethod({
+  key = "KillEnemy",
+  callback = function(player, character, enemy)
+    DiddyLevel.AwardXP(player, 25)
+  end,
+})
+      </code></pre>
+
+      <h3>Forcing a Method</h3>
+
+      <pre><code class="lua">
+DiddyLevel.ForceMethod("KillEnemy", player, character, enemy)
+      </code></pre>
+    </section>
+
+    <!-- Example -->
+    <section id="example">
+      <h1>Example Setup</h1>
+
+      <pre><code class="lua">
+local Players = game:GetService("Players")
+local DiddyLevel = require(game.ServerStorage.DiddyLevel)
+
+DiddyLevel.InitializeLevels({
+  { LevelRank = 1, RequiredXP = 0 },
+  { LevelRank = 2, RequiredXP = 100 },
+})
+
+Players.PlayerAdded:Connect(function(player)
+  DiddyLevel.InitializePlayer(player)
+end)
+      </code></pre>
     </section>
   </main>
 
