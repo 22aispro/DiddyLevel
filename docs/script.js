@@ -1,2 +1,2 @@
-console.log("DiddyLevel site loaded 🚀");
-
+// future: highlight active sidebar link
+console.log("Docs loaded");
