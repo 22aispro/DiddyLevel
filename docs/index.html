@@ -2,42 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>DiddyLevel Documentation</title>
+  <title>DiddyLevel | Documentation</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="docs">
-  <aside class="sidebar">
-    <h2>DiddyLevel</h2>
-    <nav>
-      <a href="docs.html#overview">Overview</a>
-      <a href="docs.html#installation">Installation</a>
-      <a href="docs.html#concepts">Core Concepts</a>
-      <a href="docs.html#levels">Levels</a>
-      <a href="docs.html#players">Players</a>
-      <a href="docs.html#xp">Awarding XP</a>
-      <a href="docs.html#methods">Leveling Methods</a>
-      <a href="docs.html#example">Example</a>
-    </nav>
-  </aside>
+<body class="rbx-docs">
+  <!-- Top Bar -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <span class="logo">DiddyLevel</span>
+      <nav>
+        <a href="docs.html">Documentation</a>
+        <a href="https://github.com/22aispro/DiddyLevel">GitHub</a>
+      </nav>
+    </div>
+  </header>
 
-  <main class="content">
-    <section>
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <nav>
+        <a href="docs.html#overview">Overview</a>
+        <a href="docs.html#installation">Installation</a>
+        <a href="docs.html#concepts">Core Concepts</a>
+        <a href="docs.html#levels">Levels</a>
+        <a href="docs.html#players">Players</a>
+        <a href="docs.html#xp">Awarding XP</a>
+        <a href="docs.html#methods">Leveling Methods</a>
+        <a href="docs.html#example">Example</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
       <h1>DiddyLevel</h1>
-      <p>
-        DiddyLevel is a server-side XP and leveling framework for Roblox.
-        It provides a simple API for defining levels, tracking player progress,
-        and awarding XP through customizable methods.
-      </p>
-    </section>
 
-    <section>
+      <p class="lead">
+        DiddyLevel is a server-side XP and leveling framework for Roblox.
+        It provides a structured way to define levels, track player progression,
+        and award experience through customizable methods.
+      </p>
+
+      <hr />
+
       <h2>Getting Started</h2>
-      <ol>
-        <li>Define your levels</li>
-        <li>Initialize players on join</li>
-        <li>Award XP through gameplay</li>
-      </ol>
+
+      <p>
+        To start using DiddyLevel, define your levels and initialize players
+        when they join the game.
+      </p>
 
       <pre><code class="lua">
 local DiddyLevel = require(game.ServerStorage.DiddyLevel)
@@ -48,11 +61,13 @@ DiddyLevel.InitializeLevels({
 })
       </code></pre>
 
-      <a href="docs.html" class="btn primary">Go to Full Documentation</a>
-    </section>
+      <p>
+        For a complete walkthrough, see the
+        <a href="docs.html">full documentation</a>.
+      </p>
 
-    <section>
-      <h2>API Surface</h2>
+      <h2>API Summary</h2>
+
       <ul>
         <li><code>InitializeLevels(levels)</code></li>
         <li><code>InitializePlayer(player, data?)</code></li>
@@ -60,18 +75,7 @@ DiddyLevel.InitializeLevels({
         <li><code>CreateLevelMethod(method)</code></li>
         <li><code>ForceMethod(key, player, character, args)</code></li>
       </ul>
-    </section>
-
-    <section>
-      <h2>Links</h2>
-      <ul>
-        <li>
-          <a href="https://github.com/22aispro/DiddyLevel">
-            GitHub Repository
-          </a>
-        </li>
-      </ul>
-    </section>
-  </main>
+    </main>
+  </div>
 </body>
 </html>
