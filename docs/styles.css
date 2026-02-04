@@ -1,123 +1,78 @@
-:root {
-  --bg: #0b1120;
-  --panel: #020617;
-  --border: #1e293b;
-  --text: #e5e7eb;
-  --muted: #94a3b8;
-  --accent: #38bdf8;
+/* ---------- Roblox Docs Theme ---------- */
+
+.rbx-docs {
+  background: #ffffff;
+  color: #111827;
 }
 
-* {
-  box-sizing: border-box;
+.topbar {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
 }
 
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-}
-
-/* ---------- Landing ---------- */
-
-.landing {
+.topbar-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0.75rem 1.5rem;
   display: flex;
-  height: 100vh;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
 }
 
-.hero {
-  text-align: center;
+.logo {
+  font-weight: 600;
 }
 
-.hero h1 {
-  font-size: 3.5rem;
-}
-
-.hero p {
-  color: var(--muted);
-  font-size: 1.2rem;
-}
-
-.actions {
-  margin-top: 2rem;
-}
-
-.btn {
-  padding: 0.75rem 1.25rem;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  margin: 0 0.5rem;
+.topbar a {
+  margin-left: 1rem;
+  color: #2563eb;
   text-decoration: none;
-  color: var(--text);
 }
 
-.btn.primary {
-  background: var(--accent);
-  color: #020617;
-  border: none;
-}
-
-/* ---------- Docs Layout ---------- */
-
-.docs {
+.layout {
   display: flex;
-  min-height: 100vh;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.sidebar {
-  width: 260px;
-  background: var(--panel);
+.rbx-docs .sidebar {
+  width: 240px;
   padding: 1.5rem;
-  border-right: 1px solid var(--border);
+  border-right: 1px solid #e5e7eb;
+  background: #f9fafb;
 }
 
-.sidebar h2 {
-  margin-top: 0;
-}
-
-.sidebar a {
+.rbx-docs .sidebar a {
   display: block;
-  margin: 0.75rem 0;
-  color: var(--muted);
+  margin-bottom: 0.75rem;
+  color: #111827;
   text-decoration: none;
+  font-size: 0.95rem;
 }
 
-.sidebar a:hover {
-  color: var(--accent);
+.rbx-docs .sidebar a:hover {
+  text-decoration: underline;
 }
 
-.content {
-  padding: 3rem;
+.rbx-docs .content {
+  padding: 2.5rem;
   max-width: 900px;
 }
 
-section {
-  margin-bottom: 4rem;
+.rbx-docs h1 {
+  font-size: 2.25rem;
 }
 
-h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+.lead {
+  font-size: 1.1rem;
+  color: #374151;
 }
 
-p, li {
-  color: var(--muted);
-  line-height: 1.7;
+.rbx-docs pre {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
 }
 
-/* ---------- Code Blocks ---------- */
-
-pre {
-  background: #020617;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.25rem;
-  overflow-x: auto;
-}
-
-code {
-  color: #a5f3fc;
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+.rbx-docs code {
+  color: #1f2937;
 }
