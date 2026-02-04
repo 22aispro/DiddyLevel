@@ -1,95 +1,113 @@
-/* -------- Studio Docs Theme -------- */
-
+/* Core Reset */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont;
+/* Body & Typography */
+body.docs-site {
+  font-family: Inter, sans-serif;
   background: #0f1115;
-  color: #e5e7eb;
+  color: #e0e6ed;
+  line-height: 1.6;
 }
 
-.app {
-  display: flex;
-  height: 100vh;
+.container {
+  max-width: 1050px;
+  margin: auto;
+  padding: 1rem;
 }
 
-/* Sidebar */
-.sidebar {
-  width: 260px;
-  background: #0b0d12;
-  border-right: 1px solid #1f2937;
-  display: flex;
-  flex-direction: column;
-}
-
-.sidebar-header {
-  padding: 1rem 1.25rem;
-  font-weight: 600;
-  font-size: 1.1rem;
+/* Top Navbar */
+.top-nav {
+  background: #12151a;
   border-bottom: 1px solid #1f2937;
+  padding: 1rem 0;
 }
 
-.nav {
-  padding: 0.75rem;
+.top-nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.nav a {
-  display: block;
-  padding: 0.6rem 0.75rem;
-  margin-bottom: 0.25rem;
+.top-nav .logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.main-nav a {
+  padding: 0 1rem;
   color: #9ca3af;
   text-decoration: none;
-  border-radius: 6px;
   font-size: 0.95rem;
 }
 
-.nav a:hover {
-  background: #111827;
-  color: #e5e7eb;
-}
-
-.nav a.active {
-  background: #1f2937;
+.main-nav a:hover {
   color: #ffffff;
 }
 
-/* Content */
-.content {
-  flex: 1;
-  padding: 2.5rem 3rem;
-  overflow-y: auto;
+.nav-right {
+  display: flex;
+  align-items: center;
 }
 
-h1 {
-  font-size: 2.25rem;
-  margin-bottom: 0.5rem;
+.nav-right input[type="search"] {
+  padding: 0.5rem;
+  margin-right: 1rem;
+  border-radius: 6px;
+  border: none;
+  background: #1f2937;
+  color: #e0e6ed;
 }
 
-h2 {
-  margin-top: 2.5rem;
-  font-size: 1.4rem;
+.nav-right select {
+  padding: 0.5rem;
+  background: #1f2937;
+  color: #e0e6ed;
+  border: none;
+  border-radius: 6px;
 }
 
-.lead {
-  font-size: 1.1rem;
+/* Hero Section */
+.landing-content {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.landing-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.landing-content .lead {
   color: #9ca3af;
-  max-width: 700px;
+  margin-bottom: 1.5rem;
 }
 
-/* Code */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.4rem;
+  margin: 0.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #e0e6ed;
+  background: #282d36;
+}
+
+.btn.primary {
+  background: #4f46e5;
+  color: #fff;
+}
+
 pre {
-  background: #0b0d12;
-  border: 1px solid #1f2937;
+  background: #1f2937;
   padding: 1rem;
   border-radius: 8px;
-  overflow-x: auto;
-  margin-top: 1rem;
-}
-
-code {
-  color: #d1d5db;
-  font-family: "JetBrains Mono", monospace;
+  margin-top: 2rem;
+  text-align: left;
 }
