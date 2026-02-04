@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>DiddyLevel</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <title>DiddyLevel Docs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <header>
-    <h1>DiddyLevel 🚀</h1>
-    <p>A flexible Roblox leveling system.</p>
-  </header>
+<body class="modern-docs">
 
-  <main>
-    <section class="card">
-      <h2>What is DiddyLevel?</h2>
-      <p>
-        DiddyLevel is a modular leveling framework designed for Roblox games.
-        It supports XP, levels, scaling, and easy customization.
-      </p>
-    </section>
+<main class="doc-container">
 
-    <section class="card">
-      <h2>Get Started</h2>
-      <ul>
-        <li><a href="docs.html">📘 Documentation</a></li>
-        <li><a href="https://github.com/22aispro/DiddyLevel">💻 GitHub Repository</a></li>
-      </ul>
-    </section>
-  </main>
+  <h1>DiddyLevel</h1>
+  <p class="lead">
+    A flexible XP & leveling framework for Roblox games.  
+    Simple API, fully server-side, and Studio-friendly.
+  </p>
 
-  <footer>
-    <p>© 2026 DiddyLevel</p>
-  </footer>
+  <div class="button-group">
+    <a href="getting-started.html" class="btn primary">Get Started</a>
+    <a href="reference.html" class="btn">API Reference</a>
+  </div>
 
-  <script src="script.js"></script>
+  <pre><code class="lua">
+-- Example usage
+local DiddyLevel = require(game.ServerStorage.DiddyLevel)
+
+DiddyLevel.InitializeLevels({
+  { LevelRank = 1, RequiredXP = 0 },
+  { LevelRank = 2, RequiredXP = 100 },
+})
+
+DiddyLevel.AwardXP(player, 50)
+  </code></pre>
+
+</main>
+
 </body>
 </html>
