@@ -1,1 +1,54 @@
+* {
+  box-sizing: border-box;
+}
 
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+header {
+  padding: 2rem;
+  background: #020617;
+}
+
+h1, h2 {
+  margin-top: 0;
+}
+
+a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+main {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.card {
+  background: #020617;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
+pre {
+  background: #020617;
+  padding: 1rem;
+  overflow-x: auto;
+  border-radius: 8px;
+}
+
+code {
+  color: #a5f3fc;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  opacity: 0.6;
+}
