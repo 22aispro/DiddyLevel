@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DiddyLevel Docs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>DiddyLevel Documentation 📘</h1>
+    <a href="index.html">← Back to Home</a>
+  </header>
 
+  <main>
+    <section class="card">
+      <h2>Installation</h2>
+      <ol>
+        <li>Download or clone the repository</li>
+        <li>Insert the DiddyLevel folder into <code>ServerStorage</code></li>
+        <li>Require the module in your server scripts</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Basic Usage</h2>
+      <pre><code>
+local DiddyLevel = require(path.to.DiddyLevel)
+
+DiddyLevel.InitializePlayer(player)
+DiddyLevel.AddXP(player, 50)
+      </code></pre>
+    </section>
+
+    <section class="card">
+      <h2>Features</h2>
+      <ul>
+        <li>XP-based leveling</li>
+        <li>Custom level curves</li>
+        <li>Server-side safety</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
