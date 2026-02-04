@@ -1,53 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>DiddyLevel — Docs</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <title>DiddyLevel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="docs-site">
-
-  <!-- Top Navbar -->
-  <header class="top-nav">
-    <div class="container">
-      <a href="index.html" class="logo">DiddyLevel</a>
-
-      <nav class="main-nav">
-        <a href="getting-started.html">Getting Started</a>
-        <a href="guides.html">Guides</a>
-        <a href="reference.html">Reference</a>
-      </nav>
-
-      <div class="nav-right">
-        <input type="search" placeholder="Search docs…">
-        <select id="version-select">
-          <option value="v1.0">v1.0</option>
-        </select>
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero / Landing Content -->
-  <main class="landing-content container">
+<body class="landing">
+  <div class="hero">
     <h1>DiddyLevel</h1>
-    <p class="lead">
-      A flexible XP and leveling framework for Roblox games.
-      Simple API, Roblox Studio friendly.
-    </p>
+    <p>Modern leveling system for Roblox games.</p>
 
-    <div class="cta-group">
-      <a href="getting-started.html" class="btn primary">Get Started</a>
-      <a href="reference.html" class="btn">API Reference</a>
+    <div class="actions">
+      <a class="btn primary" href="docs.html">Read the Docs</a>
+      <a class="btn" href="https://github.com/22aispro/DiddyLevel">GitHub</a>
     </div>
-
-    <pre><code class="lua">
-DiddyLevel.InitializeLevels({
-  { LevelRank = 1, RequiredXP = 0 },
-  { LevelRank = 2, RequiredXP = 100 },
-})
-    </code></pre>
-  </main>
-
+  </div>
 </body>
 </html>
