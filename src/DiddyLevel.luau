@@ -7,20 +7,20 @@ local diddy_level = {}
 
 function diddy_level.InitializeLevels(level_list: {level_handler.Level})
 	for _, level in level_list do
-		level_handler.CreateLevel(level)
+		local level_data = {
+			LevelRank = level;
+			RequiredXP = level*100;
+		}
+		
+		level_handler.CreateLevel(level_data)
 	end
 end
 
-function diddy_level.InitializePlayer(plr: Player, data: level_handler.PlayerLevelObject)
-	return level_handler.OnPlayerAdded(plr, data)
-end
+diddy_level.InitializePlayer = level_handler.OnPlayerAdded
+diddy_level.AwardXP = level_handler.AwardXP
 
 function diddy_level.CreateLevelMethod(method_data: level_methods.LevelingMethod)
 	level_methods:connect(method_data)
-end
-
-function diddy_level.AwardXP(plr, xp)
-	level_handler.AwardXP(plr, xp)
 end
 
 function diddy_level.ForceMethod(key, plr, char, extra_args)
