@@ -1,74 +1,63 @@
-/* ---------------- Modern Dark Docs Theme ---------------- */
+/* -------- Modern Dark Docs -------- */
 
 body.modern-docs {
-  background-color: #12131a; /* Dark background */
-  color: #e0e6ed;           /* Light text */
-  font-family: "Inter", sans-serif;
+  background: #12131a;
+  color: #e0e6ed;
+  font-family: Inter, system-ui, sans-serif;
   line-height: 1.7;
   margin: 0;
-  padding: 0;
 }
 
 .doc-container {
-  max-width: 780px;         /* readable width */
-  margin: 4rem auto;        /* horizontal centering */
+  max-width: 780px;
+  margin: 4rem auto;
   padding: 0 1.5rem;
 }
 
 h1 {
   font-size: 2.5rem;
   text-align: center;
-  margin-bottom: 1rem;
 }
 
 h2 {
-  font-size: 1.5rem;
   margin-top: 2.5rem;
-  margin-bottom: 0.75rem;
-  color: #ffffff;
+  color: #fff;
 }
 
 .lead {
-  font-size: 1.1rem;
   text-align: center;
   color: #9ca3af;
   margin-bottom: 2rem;
 }
 
-/* ---------------- Code blocks ---------------- */
-pre {
-  background: #1c1f28;      /* Dark code background */
-  padding: 1rem 1.25rem;
+/* Prism code styling */
+
+pre[class*="language-"] {
+  background: #1c1f28 !important;
   border-radius: 10px;
-  margin: 1rem auto;         /* centered */
-  max-width: 90%;            /* not full width */
-  overflow-x: auto;          /* horizontal scroll if needed */
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.95rem;
+  margin: 1rem auto;
+  max-width: 90%;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
-code {
-  color: #d1d5db;
-}
+/* Buttons */
 
-/* ---------------- Buttons ---------------- */
-a.btn {
+.btn {
   text-decoration: none;
-  display: inline-block;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
-  font-weight: 500;
-  margin-top: 2rem;
-  color: #e0e6ed;
   background: #2f3140;
-  transition: background 0.2s;
+  color: #e0e6ed;
+  transition: 0.2s;
 }
 
-a.btn:hover {
+.btn:hover {
   background: #4f46e5;
 }
 
-a.btn.primary {
+.btn.primary {
   background: #4f46e5;
   color: #fff;
 }
