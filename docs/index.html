@@ -4,16 +4,20 @@
   <meta charset="UTF-8">
   <title>DiddyLevel Docs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Prism syntax highlighting -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
 </head>
+
 <body class="modern-docs">
 
 <main class="doc-container">
 
   <h1>DiddyLevel</h1>
   <p class="lead">
-    A flexible XP & leveling framework for Roblox games.  
-    Simple API, fully server-side, and Studio-friendly.
+    A flexible XP & leveling framework for Roblox games.
   </p>
 
   <div class="button-group">
@@ -21,8 +25,7 @@
     <a href="reference.html" class="btn">API Reference</a>
   </div>
 
-  <pre><code class="lua">
--- Example usage
+  <pre><code class="language-lua">
 local DiddyLevel = require(game.ServerStorage.DiddyLevel)
 
 DiddyLevel.InitializeLevels({
@@ -34,6 +37,9 @@ DiddyLevel.AwardXP(player, 50)
   </code></pre>
 
 </main>
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-lua.min.js"></script>
 
 </body>
 </html>
