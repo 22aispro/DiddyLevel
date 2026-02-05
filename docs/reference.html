@@ -13,50 +13,40 @@
 
 <main class="doc-container">
 
-  <h1>API Reference</h1>
-  <p class="lead">Complete DiddyLevel function reference.</p>
+<h1>API Reference</h1>
+<p class="lead">Complete DiddyLevel function reference.</p>
 
-  <h2>InitializeLevels(levelList)</h2>
+<h2>InitializeLevels(levelList)</h2>
 
-  <pre><code class="language-lua">
-DiddyLevel.InitializeLevels({
+<pre><code class="language-lua">DiddyLevel.InitializeLevels({
   { LevelRank = 1, RequiredXP = 0 },
   { LevelRank = 2, RequiredXP = 100 },
-})
-  </code></pre>
+})</code></pre>
 
-  <h2>InitializePlayer(player, data?)</h2>
+<h2>InitializePlayer(player, data?)</h2>
 
-  <pre><code class="language-lua">
-DiddyLevel.InitializePlayer(player, optionalData)
-  </code></pre>
+<pre><code class="language-lua">DiddyLevel.InitializePlayer(player, optionalData)</code></pre>
 
-  <h2>AwardXP(player, xp)</h2>
+<h2>AwardXP(player, xp)</h2>
 
-  <pre><code class="language-lua">
-DiddyLevel.AwardXP(player, 25)
-  </code></pre>
+<pre><code class="language-lua">DiddyLevel.AwardXP(player, 25)</code></pre>
 
-  <h2>CreateLevelMethod(methodData)</h2>
+<h2>CreateLevelMethod(methodData)</h2>
 
-  <pre><code class="language-lua">
-DiddyLevel.CreateLevelMethod({
+<pre><code class="language-lua">DiddyLevel.CreateLevelMethod({
   key = "KillEnemy",
   callback = function(player, char)
     DiddyLevel.AwardXP(player, 10)
   end
-})
-  </code></pre>
+})</code></pre>
 
-  <h2>ForceMethod(key, player, char, extraArgs)</h2>
+<h2>ForceMethod(key, player, char, extraArgs)</h2>
 
-  <pre><code class="language-lua">
-DiddyLevel.ForceMethod("KillEnemy", player, character, enemy)
-  </code></pre>
+<pre><code class="language-lua">DiddyLevel.ForceMethod("KillEnemy", player, character, enemy)</code></pre>
 
-  <div class="button-group">
-    <a href="getting-started.html" class="btn">Back</a>
-  </div>
+<div class="button-group">
+  <a href="getting-started.html" class="btn">Back</a>
+</div>
 
 </main>
 
