@@ -2,64 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>DiddyLevel — Getting Started</title>
+  <title>Getting Started — DiddyLevel</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css" rel="stylesheet" />
 </head>
+
 <body class="modern-docs">
 
 <main class="doc-container">
 
   <h1>Getting Started</h1>
-  <p class="lead">
-    Learn how to install and initialize DiddyLevel in your Roblox game.
-  </p>
+  <p class="lead">Install and initialize DiddyLevel in your Roblox game.</p>
 
-  <section>
-    <h2>Installation</h2>
-    <p>Place the <code>DiddyLevel</code> folder into <code>ServerStorage</code> and require it in a server script:</p>
-    <pre><code class="lua">
+  <h2>Installation</h2>
+
+  <pre><code class="language-lua">
 local DiddyLevel = require(game.ServerStorage.DiddyLevel)
-    </code></pre>
-  </section>
+  </code></pre>
 
-  <section>
-    <h2>Defining Levels</h2>
-    <p>Define the levels that players can reach:</p>
-    <pre><code class="lua">
+  <h2>Define Levels</h2>
+
+  <pre><code class="language-lua">
 DiddyLevel.InitializeLevels({
   { LevelRank = 1, RequiredXP = 0 },
   { LevelRank = 2, RequiredXP = 100 },
   { LevelRank = 3, RequiredXP = 250 },
 })
-    </code></pre>
-  </section>
+  </code></pre>
 
-  <section>
-    <h2>Initialize Players</h2>
-    <p>Register players when they join:</p>
-    <pre><code class="lua">
+  <h2>Initialize Players</h2>
+
+  <pre><code class="language-lua">
 local Players = game:GetService("Players")
 
 Players.PlayerAdded:Connect(function(player)
   DiddyLevel.InitializePlayer(player)
 end)
-    </code></pre>
-  </section>
+  </code></pre>
 
-  <section>
-    <h2>Award XP</h2>
-    <p>Grant XP to players:</p>
-    <pre><code class="lua">
+  <h2>Award XP</h2>
+
+  <pre><code class="language-lua">
 DiddyLevel.AwardXP(player, 50)
-    </code></pre>
-  </section>
+  </code></pre>
 
   <div class="button-group">
     <a href="reference.html" class="btn primary">Next: API Reference</a>
   </div>
 
 </main>
+
+<script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-lua.min.js"></script>
 
 </body>
 </html>
