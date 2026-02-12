@@ -12,6 +12,7 @@ export type PlayerLevelObject = {
 
 local level_handler = {
 	["all_levels"] = {};
+	["all_xp"] = {};
 	["plrs"] = {};
 }
 
@@ -37,15 +38,16 @@ function level_handler.OnPlayerAdded(plr, data: PlayerLevelObject)
 end
 
 function level_handler.CreateLevel(data: {LevelRank: number, RequiredXP: number})
-	for i, v: Level in level_handler.all_levels do
-		if v.LevelRank == data.LevelRank then
-			return
-		elseif v.RequiredXP == data.RequiredXP then
-			return
-		end
+	if level_handler.all_levels[data.LevelRank] then
+		return
+	end
+	if level_handler.all_xp[data.RequiredXP] then
+		return
 	end
 	
-	level_handler.all_levels[data.LevelRank] = data
+	level_handler.all_xp[data.RequiredXP] = data.LevelRank
+	level_handler.all_levels[data.LevelRank] = data.RequiredXP
+
 	print(level_handler.all_levels)
 end;
 
