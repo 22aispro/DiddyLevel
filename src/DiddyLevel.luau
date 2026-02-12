@@ -5,14 +5,9 @@ local level_handler = require("@self/LevelHandler")
 
 local diddy_level = {}
 
-function diddy_level.InitializeLevels(level_list: {level_handler.Level})
-	for _, level in level_list do
-		local level_data = {
-			LevelRank = level;
-			RequiredXP = level*100;
-		}
-		
-		level_handler.CreateLevel(level_data)
+function diddy_level.InitializeLevels(max_level: number)
+	for level = 1, max_level do
+		level_handler.CreateLevel({LevelRank = level, RequiredXP = math.floor(120 + 45 * level + 18 * (level ^ 1.45))})
 	end
 end
 
